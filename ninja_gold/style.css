@@ -1,0 +1,19 @@
+#activities{
+	display:block;
+	border-style: double;
+    border-width: thick;
+    font-size: xx-small;
+}
+
+#selection, ul, li{
+	border-style: double;
+    border-width: 3px;
+	display: inline-block;
+	padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+	text-align: center;
+
+
+}

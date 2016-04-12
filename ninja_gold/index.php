@@ -1,15 +1,14 @@
 <?php 
 session_start();
-	if(! isset($_SESSION['gold']))
-	{
-		$_SESSION['gold'] = 0;
-	}
 
-	if(! isset($_SESSION['activities']))
-	{
-
-	$_SESSION['activities'] = array();
+if(! isset($_SESSION['total_gold']))
+{ $_SESSION['total_gold'] = 0;  
 }
+
+if(! isset($_SESSION['activities']))
+{ $_SESSION['activities'] = array(); 
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -20,42 +19,47 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div id="container">
-	<h3>Your Gold <? $_SESSION['gold'] ?></h3>
+	<div id="selection">
+	<h3>Your Gold <?=$_SESSION['total_gold'] ?></h3>
 		<ul>
 			<li>
 			<p>Farm</p>
 			<p>10-20 Gold</p>
-			<form action="process.php" method="post" name="action" value="farm">
-			<input type="submit" value="Get Gold" />
+			<form action="process.php" method="post">
+				<input type="hidden" name="building" value="farm" />
+				<input type="submit" value="Find Gold!"/>
 			</form>
 			</li>
 
 			<li>
 			<p>Cave</p>
-			<p>5-10 Gold</p>
-			<form action="process.php" method="post" name="action" >
-			<input type="submit" value="Get Gold" />
+			<p>50-100 Gold</p>
+			<form action="process.php" method="post">
+				<input type="hidden" name="building" value="cave" />
+				<input type="submit" value="Find Gold!"/>
 			</form>
 			</li>
 
 			<li>
 			<p>House</p>
-			<p>2-5 Gold</p>
-			<form action="process.php" method="post" name="action">
-			<input type="submit" value="Get Gold" />
+			<p>20-50 Gold</p>
+			<form action="process.php" method="post">
+				<input type="hidden" name="building" value="house" />
+				<input type="submit" value="Find Gold!"/>
 			</form>
 			</li>
 
 			<li>
-			<p>Casino</p>
-			<p>Earn/Lose 0-50 Gold</p>
-			<form action="process.php" method="post" name="action">
-			<input type="submit" value="Get Gold" />
+			<p>College</p>
+			<p>WIN/LOSE:BIG</p>
+			<form action="process.php" method="post">
+				<input type="hidden" name="building" value="college" />
+				<input type="submit" value="Find Gold!"/>
 			</form>
 			</li>
 		</ul>
-		<p>Activities</p>
+		</div>
+		<h2>Activities</h2>
 		<div id="activities">
 			<?php 
 			foreach ($_SESSION['activities'] as $activity) {
