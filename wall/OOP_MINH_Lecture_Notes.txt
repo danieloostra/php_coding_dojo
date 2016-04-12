@@ -1,0 +1,51 @@
+OOP - talk: Minh
+
+class Dog{
+	public $legs;
+	public $hair;
+	public $name;
+	public $ears;
+	public ***;
+
+
+
+	public function _construct ($name){
+	$this ->	$legs =  4;
+	$this ->	$hair =  0;
+	$this ->	$name =  $name;
+	$this ->	$ears =  2;
+	}
+}
+
+
+$myDog = new Dog('Rex');
+$myDog = new Dog('Steven');
+
+Play blackjack:
+
+class Card{
+	public function __contruct ($suit, $value){
+
+	}
+}
+
+class Player{
+	public function __contruct ($level, $money){
+	
+	}
+}
+class Dealer{
+	public function __contruct ($type){
+	
+	}
+}
+class Casino{
+	public function __contruct ($type){
+	
+	}
+}
+class cardTable{
+	public function __contruct ($type){
+	
+	}
+}

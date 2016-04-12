@@ -31,10 +31,14 @@ function print_all(){
 			run_mysql_query($query);
 		}
 	 ?>
+
 	 <div id='success'>
 	 	The email address that you entered (<?=$_POST['email']?>)<br/>
 	 	is a valid email address. Thank you!
 	 </div>
+		<hr/>
+		<hr/>
+		<hr/>
 	 <div id='success_title'>
 		Email Addresses Entered:
 	 </div>
