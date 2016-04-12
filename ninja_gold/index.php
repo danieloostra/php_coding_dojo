@@ -20,14 +20,14 @@ if(! isset($_SESSION['activities']))
 </head>
 <body>
 	<div id="selection">
-	<h3>Your Gold <?=$_SESSION['total_gold'] ?></h3>
+	<div id="gold_box"><h3>NINJA Gold: <?=$_SESSION['total_gold'] ?></h3></div>
 		<ul>
 			<li>
 			<p>Farm</p>
 			<p>10-20 Gold</p>
 			<form action="process.php" method="post">
 				<input type="hidden" name="building" value="farm" />
-				<input type="submit" value="Find Gold!"/>
+				<input type="submit" value="Farm!"/>
 			</form>
 			</li>
 
@@ -36,7 +36,7 @@ if(! isset($_SESSION['activities']))
 			<p>50-100 Gold</p>
 			<form action="process.php" method="post">
 				<input type="hidden" name="building" value="cave" />
-				<input type="submit" value="Find Gold!"/>
+				<input type="submit" value="Dig!"/>
 			</form>
 			</li>
 
@@ -45,7 +45,7 @@ if(! isset($_SESSION['activities']))
 			<p>20-50 Gold</p>
 			<form action="process.php" method="post">
 				<input type="hidden" name="building" value="house" />
-				<input type="submit" value="Find Gold!"/>
+				<input type="submit" value="Work!"/>
 			</form>
 			</li>
 
@@ -54,22 +54,22 @@ if(! isset($_SESSION['activities']))
 			<p>WIN/LOSE:BIG</p>
 			<form action="process.php" method="post">
 				<input type="hidden" name="building" value="college" />
-				<input type="submit" value="Find Gold!"/>
+				<input type="submit" value="Go For It!"/>
 			</form>
 			</li>
 		</ul>
-		</div>
-		<h2>Activities</h2>
-		<div id="activities">
-			<?php 
-			foreach ($_SESSION['activities'] as $activity) {
-				echo $activity;
-			}
-			?>
-		<form action="clear.php" method="post" name="clear">
+	<form action="clear.php" method="post" name="clear">
 		<input type="submit" value="Delete Session" />
-		</form>
-		</div>
+	</form>
+	</div>
+	</div>
+	<h4>Activities</h4>
+	<div id="activities">
+	<?php 
+	foreach ($_SESSION['activities'] as $activity) {
+	echo $activity;
+	}
+	?>
 	</div>
 </body>
 </html>
