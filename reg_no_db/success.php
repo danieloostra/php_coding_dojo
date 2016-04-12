@@ -4,7 +4,7 @@ session_start();
 $errors = array();
 
 if (isset($_POST['email']) && $_POST['email'] != null) {
-	if (! filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+	if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) != TRUE) {
 	$errors[] ="This is not a valid Email, you douche.";	
 	}
 } else {
@@ -30,13 +30,16 @@ if (! ctype_alpha($_POST['first_name'] || ! ctype_alpha('last_name'))) {
 }
 
 $test_arr  = explode('/', $_POST['birthday']);
-if (! checkdate($test_arr[0], $test_arr[1], $test_arr[2])) {
+if (checkdate($test_arr[0], $test_arr[1], $test_arr[2]) != TRUE ) {
 		$errors[] = "Please enter your date in MM/DD/YYYY format!";
 }
 
 if (! empty($errors)) {
-	$_SESSION['errors'] = $errors;	
-	echo $_SESSION['errors'];
+	$_SESSION['errors'] = $errors;
+	foreach ($_SESSION['errors'] as $value) {
+		echo 'ERROR:'.$value.'<br/>';	
+	}
+	echo '<div style="border-style:double; padding: 4px; border-width:2px; margin-left=auto; margin-right:auto; display:block; width:50%; position:relative; left:10px; text-align:center;"><a href="./index.php">Go Back</a> <=|=> <a href="./clear.php">Reset Inputs</a></div>';
 } else{
 echo "Thanks for submitting your information.";
 }
