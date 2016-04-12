@@ -4,23 +4,17 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Great Number Game - Response Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-<p>The number was: </p>
-<?php
-echo $_SESSION['rando'];
-?>
-<p>You Guessed: <?php 
-echo $_SESSION['guess']
-?>
-<h1>
-<?php
-echo $_SESSION['response'];
-?>
-</h1>
-<form action="index.php">
+<fieldset>
+<p id="center_stuff">The number was: <?php echo $_SESSION['rando']; ?></p>
+<p id="center_stuff">You Guessed: <?php echo $_SESSION['guess'] ?>
+<h1 id="center_stuff"><?php echo $_SESSION['response']; ?></h1>
+<form action="index.php" id="center_stuff">
 	<input type="submit" value="Go Back" />
 </form>
-</body>
+</fieldset>
+</body>a
 </html>

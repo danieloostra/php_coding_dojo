@@ -8,11 +8,11 @@ if ($_SESSION['rando'] == $_POST['guess'])
 
 		elseif ($_SESSION['rando'] < $_POST['guess'])
 		{
-			$_SESSION['response'] = "You're HIGH";
+			$_SESSION['response'] = "You're HIGH as a motherf'er";
 		}
 
 			else{
-				$_SESSION['response'] = "You're LOW";
+				$_SESSION['response'] = "You're LOW, like on the DL";
 			}
 $_SESSION['guess'] = $_POST['guess'];
 
