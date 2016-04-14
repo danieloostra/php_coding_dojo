@@ -77,8 +77,8 @@ function escape_this_string($string)
   return $connection->real_escape_string($string);
 }
 
-$query = 'SELECT * FROM users';
-$data = fetch_all($query);
+$whatup= 'SELECT * FROM users';
+$data = fetch_all($whatup);
 
 // var_dump($data);
 
@@ -86,9 +86,9 @@ $data = fetch_all($query);
 
 
 foreach ($data as $row) {
-    echo $row['id'];
-    echo $row['first_name'];
-    echo $row['last_name'];
+    echo $row['id'].'<br/>';
+    echo $row['first_name'].'<br/>';
+    echo $row['last_name'].'<br/>';
 }
 
 

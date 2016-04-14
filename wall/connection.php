@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 /*--------------------BEGINNING OF THE CONNECTION PROCESS------------------*/
 //define constants for db_host, db_user, db_pass, and db_database
 //adjust the values below to match your database settings
@@ -11,7 +12,7 @@ $connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
 //make sure connection is good or die
 if ($connection->connect_errno) 
 {
-  die("Failed to connect to MySQL: (" . $connection->connect_errno . ") " . $connection->connect_error);
+  die('Failed to connect to MySQL: (' . $connection->connect_errno . ') ' . $connection->connect_error);
 }
 /*-----------------------END OF CONNECTION PROCESS------------------------*/
 /*----------------------DATABASE QUERYING FUNCTIONS-----------------------*/
@@ -44,7 +45,7 @@ function run_mysql_query($query)
   $result = $connection->query($query);
   return $connection->insert_id;
 }
-//returns an escaped string. EG, the string "That's crazy!" will be returned as "That\'s crazy!"
+//returns an escaped string. EG, the string 'That's crazy!' will be returned as 'That\'s crazy!'
 //also helps secure your database against SQL injection
 function escape_this_string($string)
 {
